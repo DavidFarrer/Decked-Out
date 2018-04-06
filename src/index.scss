@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Keania+One');
+
+$gunmetal: #273043;
+$gray-blue: #9197AE;
+$carmine-pink: #E84343;
+$honey-dew: #EFF6EE;
+$spanish-red: #DD0426;
+
+*, html {
+	padding: 0;
+	margin: 0;
+}
+
+nav {
+	background-color: $carmine-pink;
+	color: $honey-dew;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 15px;
+
+	img {
+		width: 50px;
+		float: left;
+	}
+
+	p {
+		color: $gunmetal;
+		display: inline-block;
+		font-family: 'Keania One', cursive;
+		font-size: 2.5em;
+	}
+}
+.navbar-links {
+	display: inline-block;
+	float: right;
+
+	a {
+		margin: 10px;
+		color: white;
+
+		&.selected {
+			border: 1px solid white;
+		}
+	}
+}
+
+.jumbotron {
+	height: calc(100vh - 50px);
+	background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("./images/clothing-store-background.jpg");
+	background-position: center;
+	background-size: cover;
+	color: white;
+	font-family: 'Keania One', cursive;
+	text-align: center;
+
+	h2, h3 {
+		text-shadow: -1px 1px 2px black, -3px 3px 8px black, -5px 5px 17px black;
+	}
+
+	h2 {
+		font-size: 4em;
+		padding-top: 30vh;
+	}
+
+	h3 {
+		font-size: 1.75em;
+		margin-bottom: 8vh;
+	}
+
+	a {
+		background-color: rgba($carmine-pink, 0.7);
+		border: 2px solid $honey-dew;
+		border-radius: 5px;
+		color: $honey-dew;
+		padding: 10px;
+		text-decoration: none;
+		text-shadow: -1px 1px 2px black, -3px 3px 8px black, -5px 5px 17px black;
+		text-transform: uppercase;
+	}
+
+	a:hover {
+		background-color: rgba($carmine-pink, 0.9);
+	}
+
+}

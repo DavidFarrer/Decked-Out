@@ -1,9 +1,8 @@
 import React from "react";
+import Jumbotron from "../components/Jumbotron";
 
 const Home = () => (
-	<div>
-		<p>This is the home page!</p>
-	</div>
+	<Jumbotron />
 );
 
 export default Home;
