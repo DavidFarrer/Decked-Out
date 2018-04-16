@@ -13,18 +13,18 @@ class HeaderNav extends React.Component {
 	render() {
 		return (
 			<nav className="navbar">
-			<div className="logo">
-				<img className="logo__img" src={require("../images/icon.png")} />
-				<p className="logo__text">Online Outfitters</p>
+			<div className="navbar__logo">
+				<img className="navbar__img" src={require("../images/icon.png")} />
+				<p className="navbar__company">Online Outfitters</p>
 			</div>
 			<button className="navbar__toggle" aria-expanded={this.state.expanded} onClick={this.toggleNav.bind(this)}>
-				<span className="toggle__open">&#9776;</span>
-				<span className="toggle__close">×</span>
+				<span className="navbar__open">&#9776;</span>
+				<span className="navbar__close">×</span>
 			</button>
-			<div className="navlinks">
-				<NavLink exact to="/" className="navlinks__link" activeClassName="selected">Home</NavLink>
-				<NavLink to="/shop" className="navlinks__link" activeClassName="selected">Shop</NavLink>
-				<NavLink to="/cart" className="navlinks__link" activeClassName="selected">Cart</NavLink>
+			<div className="navbar__links">
+				<NavLink exact to="/" className="navbar__link" activeClassName="selected">Home</NavLink>
+				<NavLink to="/shop" className="navbar__link" activeClassName="selected">Shop</NavLink>
+				<NavLink to="/cart" className="navbar__link" activeClassName="selected">Cart</NavLink>
 			</div>
 		</nav>
 		);

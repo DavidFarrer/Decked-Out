@@ -19,6 +19,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+	background: linear-gradient(to left, #e0eafc, #cfdef3);
+}
+
 .navbar {
 	display: grid;
 	background-color: $carmine-pink;
@@ -31,11 +35,11 @@ html {
 	width: 100%;
 }
 
-.logo__img {
+.navbar__img {
 	height: 50px;
 }
 
-.logo__text {
+.navbar__company {
 	color: $honey-dew;
 	display: inline-block;
 	font-family: 'Keania One', cursive;
@@ -43,12 +47,12 @@ html {
 }
 
 
-.logo {
+.navbar__logo {
 	display: grid;
 	align-items: center;
 	grid-template-columns: auto 1fr;
 }
-.navlinks {
+.navbar__links {
 	background-color: $carmine-pink;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -58,7 +62,7 @@ html {
 	transition: all 0.8s;
 	transform-origin: 0% 0%;
 }
-.navlinks__link {
+.navbar__link {
 	color: $honey-dew;
 	font-family: 'Keania One', cursive;
 	font-size: 1.1em;
@@ -91,21 +95,21 @@ html {
 		outline: none;
 	}
 
-	&[aria-expanded="true"] > .toggle__open {
+	&[aria-expanded="true"] > .navbar__open {
 		display: none;
 	}
-	&[aria-expanded="true"] > .toggle__close {
+	&[aria-expanded="true"] > .navbar__close {
 		display: block;
 	}
-	&[aria-expanded="false"] > .toggle__open {
+	&[aria-expanded="false"] > .navbar__open {
 		display: block;
 	}
-	&[aria-expanded="false"] > .toggle__close {
+	&[aria-expanded="false"] > .navbar__close {
 		display: none;
 	}
 }
 
-.toggle__close {
+.navbar__close {
 	font-size: 20px;
 	
 }
@@ -148,6 +152,57 @@ html {
 	}
 }
 
+/* Shop */
+
+.shop {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: 2fr 8fr;
+	grid-template-rows: 100px auto;
+	grid-template-areas: 
+		"title title"
+		"sidebar products";
+	padding: 50px 20px;
+}
+
+.shop__title {
+	font-family: 'Keania One', cursive;
+	font-size: 40px;
+	grid-area: title;
+	justify-self: center;
+	align-self: center;
+}
+
+.sidebar {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+	display: grid;
+	font-variant: small-caps;
+	grid-gap: 5px;
+	justify-content: center;
+	justify-items: center;
+	padding: 10px;
+
+}
+
+.sidebar__title {
+	justify-self: center;
+	margin-bottom: 10px;
+	font-variant: small-caps;
+}
+
+.sidebar__filter {
+	text-decoration: none;
+	color: $gunmetal;
+	font-size: 1.1em;
+	padding: 3px;
+	border-radius: 5px;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
 @media (max-width: 600px) {
 	.navbar {
 		grid-template-columns: 1fr auto;
@@ -160,18 +215,18 @@ html {
 		align-items: center;
 		justify-content: center;
 	}
-	.navlinks {
+	.navbar__links {
 		// display: none;
 		grid-column: 1 / -1;
 		border: 1px solid $gray-blue;
 		border-radius: 5px;
 	}
 
-	[aria-expanded="true"] ~ .navlinks {
+	[aria-expanded="true"] ~ .navbar__links {
 		transform: rotateX(0);
 	}
 
-	[aria-expanded="false"] ~ .navlinks {
+	[aria-expanded="false"] ~ .navbar__links {
 		border: none;
 		
 		// overflow: hidden;
@@ -180,11 +235,11 @@ html {
 }
 
 @media (max-width: 500px) {
-	.logo__text {
+	.navbar__company {
 		font-size: 1.9em;
 	}
 
-	.logo__img {
+	.navbar__img {
 		height: 40px;
 	}
 }
