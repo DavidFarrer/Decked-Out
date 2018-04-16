@@ -178,6 +178,7 @@ body {
 	border-radius: 5px;
 	display: grid;
 	font-variant: small-caps;
+	grid-area: sidebar;
 	grid-gap: 5px;
 	justify-content: center;
 	justify-items: center;
@@ -201,6 +202,19 @@ body {
 	&:hover {
 		opacity: 0.7;
 	}
+}
+
+.products {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Product */
+.product {
+	background: rgba(255,255,255,0.3);
+	border: 1px solid red;
+	padding: 10px;
 }
 
 @media (max-width: 600px) {

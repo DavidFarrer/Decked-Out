@@ -6,20 +6,23 @@ import { setVisibilityFilter } from "../actions";
 
 
 class Shop extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props.setVisibilityFilter(this.props.location.pathname.split("/")[2] || "all");
+	}
 	shouldComponentUpdate(nextProps, nextState) {
 			if (this.props.location.pathname !== nextProps.location.pathname) {
-				this.props.dispatch(setVisibilityFilter(nextProps.location.pathname.split("/")[2] || "all"));
+				this.props.setVisibilityFilter(nextProps.location.pathname.split("/")[2] || "all");
 				return false;
 			}
 			return true;
 	}
 	render() {
-		console.log(this.props);
 		return (
 			<section className="shop">
 				<h1 className="shop__title">Shop</h1>
 				<Sidebar />
-				<Products />
+				<Products products={this.props.products} filter={this.props.visibilityFilter} />
 			</section>
 		);
 	}
@@ -29,6 +32,10 @@ class Shop extends React.Component {
 const mapStateToProps = (state, ownProps) => ({
   visibilityFilter: state.visibilityFilter,
   products: state.products
-})
+});
 
-export default connect(mapStateToProps)(Shop);
+const mapDispatchToProps = (dispatch) => ({
+	setVisibilityFilter: (filter) => dispatch(setVisibilityFilter(filter))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);

@@ -1,9 +1,11 @@
 const productsArr = [
 	{
+		id: 0,
 		name: "Sick Hoodie",
-		category: "hoodie"
+		category: "hoodies"
 	},
 	{
+		id: 1,
 		name: "Something else",
 		category: "other"
 	}
