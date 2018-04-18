@@ -5,6 +5,7 @@ const Products = ({ products, filter }) => {
 	function renderProduct(product) {
 		return (
 			<Product
+				key={product.id}
 				product={product}
 			/>
 		);
@@ -16,9 +17,7 @@ const Products = ({ products, filter }) => {
 	const visibleProducts = [];
 	filteredProducts.map(product => {
 		visibleProducts.push(
-			<article className="product" key={product.id}>
-				{renderProduct(product)}
-			</article>
+				renderProduct(product)
 		);
 	});
 	return (
