@@ -1,6 +1,10 @@
 export const VisibilityFilters = {
 	SHOW_ALL: "all",
-	HOODIES: "hoodies"
+	HOODIES: "hoodies",
+	TSHIRTS: "tshirts",
+	JEANS: "jeans",
+	SWEATERS: "sweaters",
+	SHOES: "shoes"
 };
 
 export const setVisibilityFilter = filter => ({

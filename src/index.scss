@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Keania+One');
+@import url('https://fonts.googleapis.com/css?family=Alice|Keania+One');
 
 $gunmetal: #273043;
 $gray-blue: #9197AE;
 $carmine-pink: #E84343;
 $honey-dew: #EFF6EE;
 $spanish-red: #DD0426;
+$font-keania: 'Keania One', cursive;
 
 *, html {
 	padding: 0;
@@ -13,6 +14,7 @@ $spanish-red: #DD0426;
 
 html {
   box-sizing: border-box;
+  font-family: 'Alice', serif;
 }
 
 *, *:before, *:after {
@@ -43,7 +45,7 @@ body {
 .navbar__company {
 	color: $honey-dew;
 	display: inline-block;
-	font-family: 'Keania One', cursive;
+	font-family: $font-keania;
 	font-size: 2.5em;
 }
 
@@ -168,7 +170,7 @@ body {
 
 .shop__title {
 	font-family: 'Keania One', cursive;
-	font-size: 40px;
+	font-size: 3em;
 	grid-area: title;
 	justify-self: center;
 	align-self: center;
@@ -181,8 +183,7 @@ body {
 	font-variant: small-caps;
 	grid-area: sidebar;
 	grid-gap: 5px;
-	justify-content: center;
-	justify-items: center;
+	align-self: start;
 	padding: 10px;
 
 }
@@ -191,6 +192,12 @@ body {
 	justify-self: center;
 	margin-bottom: 10px;
 	font-variant: small-caps;
+}
+
+.sidebar__filters {
+	display: grid;
+	justify-items: center;
+	grid-gap: 5px;
 }
 
 .sidebar__filter {
@@ -207,20 +214,29 @@ body {
 
 .products {
 	display: grid;
+	grid-area: products;
 	grid-gap: 20px;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 /* Product */
 .product {
+	align-content: start;
 	background: rgba(255,255,255,0.3);
 	border-radius: 5px;
+	display: grid;
+	font-size: 1.1em;
+	grid-gap: 5px;
+	grid-template-columns: 1fr auto;
 	padding: 10px;
+	transition: 0.5s ease;
+
 
 	&:hover {
 		cursor: pointer;
+		transform: scale(1.03);
 		.product__image {
-			opacity: 0.6;
+			opacity: 0.4;
 		}
 		.product__button {
 			opacity: 1;
@@ -230,6 +246,7 @@ body {
 
 .product__image-container {
 	position: relative;
+	grid-column: -1 / 1;
 }
 .product__image {
 	transform: translateZ(0);
@@ -243,7 +260,7 @@ body {
 	border-radius: 5px;
 	color: $honey-dew;
 	cursor: pointer;
-	padding: 4px;
+	padding: 8px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -253,7 +270,19 @@ body {
 	opacity: 0;
 }
 
+.product__name {
+	transform: translateZ(0);
+	font-weight: bold;
+	padding-left: 4px;
+}
+
+.product__price {
+	transform: translateZ(0);
+	padding-right: 4px;
+}
+
 @media (max-width: 600px) {
+	/* Navbar */
 	.navbar {
 		grid-template-columns: 1fr auto;
 		grid-auto-flow: row;
@@ -266,7 +295,6 @@ body {
 		justify-content: center;
 	}
 	.navbar__links {
-		// display: none;
 		grid-column: 1 / -1;
 		border: 1px solid $gray-blue;
 		border-radius: 5px;
@@ -285,11 +313,25 @@ body {
 }
 
 @media (max-width: 500px) {
+	/* Navbar */
 	.navbar__company {
 		font-size: 1.9em;
 	}
 
 	.navbar__img {
 		height: 40px;
+	}
+}
+
+@media (max-width: 584px) {
+	.shop {
+		grid-template-areas:
+			"title title"
+			"sidebar sidebar"
+			"products products";
+	}
+	.sidebar__filters {
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		grid-column-gap: 10px;
 	}
 }
