@@ -1,17 +1,17 @@
 import React from "react";
 import Product from "./Product";
 
-const Products = ({ products, filter }) => {
+const Products = ({ onClick, products, filter }) => {
 	function renderProduct(product) {
 		return (
 			<Product
+				onClick={onClick} 
 				key={product.id}
 				product={product}
 			/>
 		);
 	}
 	const filteredProducts = filter === "all" ? products : products.filter(product => {
-		console.log(`product: ${product.category}, filter: ${filter}`);
 		return product.category === filter;
 	});
 	const visibleProducts = [];
