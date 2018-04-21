@@ -22,3 +22,8 @@ export const openModal = productId => ({
 	mode: "open",
 	productId
 });
+
+export const changeSelectedQuantity = quantitySelected => ({
+	type: "CHANGE_QUANTITY",
+	quantitySelected
+});

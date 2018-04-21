@@ -3,7 +3,7 @@ import Products from "../components/Products";
 import Sidebar from "../components/Sidebar";
 import Modal from "../components/Modal";
 import { connect } from "react-redux";
-import { setVisibilityFilter, openModal, closeModal } from "../actions";
+import { setVisibilityFilter, openModal, closeModal, changeSelectedQuantity } from "../actions";
 
 
 class Shop extends React.Component {
@@ -27,7 +27,13 @@ class Shop extends React.Component {
 					<Sidebar />
 					<Products onClick={this.props.openModal.bind(this)} products={this.props.products} filter={this.props.visibilityFilter} />
 				</section>
-				<Modal mode={this.props.modal.mode} onClose={this.props.closeModal.bind(this)} product={this.props.products.filter(el => el.id === this.props.modal.productId)[0]} />
+				<Modal 
+					mode={this.props.modal.mode} 
+					onClose={this.props.closeModal.bind(this)} 
+					product={this.props.products.filter(el => el.id === this.props.modal.productId)[0]} 
+					onChangeQuantity={this.props.changeSelectedQuantity.bind(this)} 
+					quantitySelected={this.props.modal.quantitySelected} 
+				/>
 			</div>
 		);
 	}
@@ -43,7 +49,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
 	setVisibilityFilter: (filter) => dispatch(setVisibilityFilter(filter)),
 	openModal: (productId) => dispatch(openModal(productId)),
-	closeModal: () => dispatch(closeModal())
+	closeModal: () => dispatch(closeModal()),
+	changeSelectedQuantity: (quantitySelected) => dispatch(changeSelectedQuantity(quantitySelected))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);
