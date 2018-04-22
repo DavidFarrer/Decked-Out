@@ -27,3 +27,8 @@ export const changeSelectedQuantity = quantitySelected => ({
 	type: "CHANGE_QUANTITY",
 	quantitySelected
 });
+
+export const addToCart = itemToAdd => ({
+	type: "ADD_TO_CART",
+	itemToAdd
+});
