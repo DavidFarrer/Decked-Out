@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ mode, onClose, product, onChangeQuantity, quantitySelected }) => (
+const Modal = ({ mode, onClose, product, onChangeQuantity, quantitySelected, onCartAdd }) => (
 	<section className={`modal__outer modal__outer--${mode}`}>
 		<div className="modal">
 			<span className="modal__closeButton" onClick={onClose}>Close ×</span>
@@ -17,7 +17,7 @@ const Modal = ({ mode, onClose, product, onChangeQuantity, quantitySelected }) =
 					<option value="5">5</option>
 				</select>
 			</div>
-			<button className="modal__button">Add to Cart</button>
+			<button className="modal__button" onClick={() => onCartAdd(product, quantitySelected)}>Add to Cart</button>
 		</div>
 	</section>
 );

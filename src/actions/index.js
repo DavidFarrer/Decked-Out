@@ -32,3 +32,8 @@ export const addToCart = itemToAdd => ({
 	type: "ADD_TO_CART",
 	itemToAdd
 });
+
+export const updateQuantity = itemToUpdate => ({
+	type: "UPDATE_ITEM",
+	itemToUpdate
+});

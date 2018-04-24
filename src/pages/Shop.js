@@ -3,7 +3,7 @@ import Products from "../components/Products";
 import Sidebar from "../components/Sidebar";
 import Modal from "../components/Modal";
 import { connect } from "react-redux";
-import { setVisibilityFilter, openModal, closeModal, changeSelectedQuantity } from "../actions";
+import { setVisibilityFilter, openModal, closeModal, changeSelectedQuantity, addToCart, updateQuantity } from "../actions";
 
 
 class Shop extends React.Component {
@@ -19,6 +19,13 @@ class Shop extends React.Component {
 			}
 			return true;
 	}
+	handleCart(product, quantity) {
+		if (this.props.cart.find(cartItem => cartItem.product.id === product.id) === undefined) {
+			this.props.addToCart(product, quantity);
+		} else {
+			this.props.updateQuantity(product.id, quantity);
+		}
+	}
 	render() {
 		return (
 			<div>
@@ -33,6 +40,7 @@ class Shop extends React.Component {
 					product={this.props.products.filter(el => el.id === this.props.modal.productId)[0]} 
 					onChangeQuantity={this.props.changeSelectedQuantity.bind(this)} 
 					quantitySelected={this.props.modal.quantitySelected} 
+					onCartAdd={this.handleCart.bind(this)} 
 				/>
 			</div>
 		);
@@ -43,14 +51,17 @@ class Shop extends React.Component {
 const mapStateToProps = (state, ownProps) => ({
   visibilityFilter: state.visibilityFilter,
   products: state.products,
-  modal: state.modal
+  modal: state.modal,
+  cart: state.cart
 });
 
 const mapDispatchToProps = (dispatch) => ({
 	setVisibilityFilter: (filter) => dispatch(setVisibilityFilter(filter)),
 	openModal: (productId) => dispatch(openModal(productId)),
 	closeModal: () => dispatch(closeModal()),
-	changeSelectedQuantity: (quantitySelected) => dispatch(changeSelectedQuantity(quantitySelected))
+	changeSelectedQuantity: (quantitySelected) => dispatch(changeSelectedQuantity(quantitySelected)),
+	addToCart: (product, quantity) => dispatch(addToCart({ product, quantity })),
+	updateQuantity: (id, quantity) => dispatch(updateQuantity({ id, quantity }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);
