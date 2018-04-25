@@ -169,7 +169,7 @@ body {
 }
 
 .shop__title {
-	font-family: 'Keania One', cursive;
+	font-family: $font-keania;
 	font-size: 3em;
 	grid-area: title;
 	justify-self: center;
@@ -360,6 +360,20 @@ body {
 	&:hover {
 		background-color: #07ef8e;
 	}
+}
+
+/* Cart */
+.cartSection {
+	padding: 50px 20px;
+	display: grid;
+	justify-content: center;
+	grid-template-rows: 100px auto;
+}
+
+.cartSection__title {
+	font-family: $font-keania;
+	font-size: 3em;
+	align-self: center;
 }
 
 @media (max-width: 610px) {
