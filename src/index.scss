@@ -367,6 +367,7 @@ body {
 	padding: 50px 20px;
 	display: grid;
 	justify-content: center;
+	justify-items: center;
 	grid-template-rows: 100px auto;
 }
 
@@ -374,6 +375,25 @@ body {
 	font-family: $font-keania;
 	font-size: 3em;
 	align-self: center;
+}
+
+.cartEmpty {
+	display: grid;
+	grid-gap: 20px;
+	justify-items: center;
+}
+
+.cartEmpty__button {
+	text-decoration: none;
+	border: 1px solid $honey-dew;
+	padding: 5px;
+	background-color: $carmine-pink;
+	color: $honey-dew;
+	border-radius: 5px;
+
+	&:hover {
+		background-color: lighten($carmine-pink, 7%);
+	}
 }
 
 @media (max-width: 610px) {
