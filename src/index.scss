@@ -396,6 +396,17 @@ body {
 	}
 }
 
+.cartItems {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: minmax(400px, 1fr);
+}
+
+.cartItems__item {
+	border: 1px solid red;
+	list-style-type: none;
+}
+
 @media (max-width: 610px) {
 	/* Navbar */
 	.navbar {
