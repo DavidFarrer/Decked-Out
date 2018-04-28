@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart, updateQuantity }) => {
+const Cart = ({ cart, updateQuantity, deleteFromCart }) => {
 	function renderCart() {
 		if (cart.length === 0) {
 			return (
@@ -34,7 +34,8 @@ const Cart = ({ cart, updateQuantity }) => {
 						<option value="5">5</option>
 					</select>
 				</div>
-				<p className="cartItems__price">x ${cartItem.product.price} = ${Math.round(cartItem.product.price * cartItem.quantity * 100)/100}</p>
+				<p className="cartItems__price">x ${cartItem.product.price} = ${(cartItem.product.price * cartItem.quantity).toFixed(2)}</p>
+				<button className="cartItems__delete" onClick={() => deleteFromCart(cartItem.product.id)} >Remove</button>
 			</li>
 		);
 	}

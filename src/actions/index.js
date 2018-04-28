@@ -37,3 +37,8 @@ export const updateQuantity = itemToUpdate => ({
 	type: "UPDATE_ITEM",
 	itemToUpdate
 });
+
+export const deleteFromCart = itemToRemove => ({
+	type: "DELETE_ITEM",
+	itemToRemove
+});

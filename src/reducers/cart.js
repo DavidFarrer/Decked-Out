@@ -12,6 +12,8 @@ const cart = (state = [] , action) => {
 				}
 				return cartItem;
 			});
+		case "DELETE_ITEM":
+			return state.filter(cartItem => cartItem.product.id !== action.itemToRemove.id);
 		default:
 			return state;
 	}	
