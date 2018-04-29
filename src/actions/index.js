@@ -42,3 +42,8 @@ export const deleteFromCart = itemToRemove => ({
 	type: "DELETE_ITEM",
 	itemToRemove
 });
+
+export const updateFlashMessage = message => ({
+	type: "UPDATE_MESSAGE",
+	message
+});

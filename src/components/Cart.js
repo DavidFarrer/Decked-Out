@@ -11,11 +11,18 @@ const Cart = ({ cart, updateQuantity, deleteFromCart }) => {
 				</div>
 			);
 		} else {
-			console.dir(cart);
 			const cartList = cart.map(cartItem => {
 				return renderCartItem(cartItem);
 			});
-			return <ul className="cartItems">{cartList}</ul>;
+			return (
+				<div>
+					<ul className="cartItems">{cartList}</ul>
+					<p className="cartItems__total">
+						Total: ${cart.reduce((total, cartItem) => total + cartItem.product.price * cartItem.quantity, 0).toFixed(2)}
+					</p>
+					<button className="cartItems__order">Complete Order</button>
+				</div>
+			);
 		}
 
 	}
@@ -34,7 +41,7 @@ const Cart = ({ cart, updateQuantity, deleteFromCart }) => {
 						<option value="5">5</option>
 					</select>
 				</div>
-				<p className="cartItems__price">x ${cartItem.product.price} = ${(cartItem.product.price * cartItem.quantity).toFixed(2)}</p>
+				<p className="cartItems__price">x ${cartItem.product.price} = <span className="cartItems__subtotal">${(cartItem.product.price * cartItem.quantity).toFixed(2)}</span></p>
 				<button className="cartItems__delete" onClick={() => deleteFromCart(cartItem.product.id)} >Remove</button>
 			</li>
 		);
