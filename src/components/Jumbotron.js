@@ -5,7 +5,7 @@ const Jumbotron = () => (
 	<div className="jumbotron">
 		<h2 className="jumbotron__title">Online Outfitters</h2>
 		<h3 className="jumbotron__slogan">Your local clothing shop, online.</h3>
-		<Link to="/shop" className="jumbotron__button">Shop Clothes</Link>
+		<Link to="/Online-Outfitters/shop" className="jumbotron__button">Shop Clothes</Link>
 	</div>
 );
 

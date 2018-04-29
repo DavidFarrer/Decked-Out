@@ -7,9 +7,9 @@ import CartContainer from "../containers/CartContainer";
 const Main = () => (
 	<main>
 		<Switch>
-			<Route exact path="/" component={Home} />
-			<Route path="/shop/:filter?" component={Shop} />
-			<Route path="/cart" component={CartContainer} />
+			<Route exact path="/Online-Outfitters/" component={Home} />
+			<Route path="/Online-Outfitters/shop/:filter?" component={Shop} />
+			<Route path="/Online-Outfitters/cart" component={CartContainer} />
 		</Switch>
 	</main>
 );

@@ -7,7 +7,7 @@ const Cart = ({ cart, updateQuantity, deleteFromCart }) => {
 			return (
 				<div className="cartEmpty">
 					<p>Your cart is empty. Go to the shop to add items!</p>
-					<Link to="/shop" className="cartEmpty__button">Shop Clothes</Link>
+					<Link to="/Online-Outfitters/shop" className="cartEmpty__button">Shop Clothes</Link>
 				</div>
 			);
 		} else {
