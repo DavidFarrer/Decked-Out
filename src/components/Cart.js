@@ -20,7 +20,7 @@ const Cart = ({ cart, updateQuantity, deleteFromCart }) => {
 					<p className="cartItems__total">
 						Total: ${cart.reduce((total, cartItem) => total + cartItem.product.price * cartItem.quantity, 0).toFixed(2)}
 					</p>
-					<button className="cartItems__order">Complete Order</button>
+					<button className="cartItems__order" onClick={() => alert("This is just the front end. Hopefully you didn't get too attached to any of the items in your cart.")}>Complete Order</button>
 				</div>
 			);
 		}
