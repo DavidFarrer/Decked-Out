@@ -8,7 +8,6 @@ class HeaderNav extends React.Component {
 		super(props);
 		this.state = { expanded: false };
 		this.closeNavOnSelect = this.closeNavOnSelect.bind(this);
-		console.log(this.props);
 	}
 	toggleNav() {
 		this.setState({ expanded: !this.state.expanded });
