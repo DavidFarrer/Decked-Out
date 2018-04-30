@@ -11,7 +11,7 @@ const store = createStore(rootReducer);
 
 ReactDOM.render((
 	<Provider store={store}>
-		<BrowserRouter>
+		<BrowserRouter basename="/Online-Outfitters">
 			<App />
 		</BrowserRouter>
 	</Provider>
