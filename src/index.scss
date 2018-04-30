@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Alice|Keania+One');
 
+
 $gunmetal: #273043;
 $gray-blue: #9197AE;
 $carmine-pink: #E84343;
@@ -121,7 +122,7 @@ body {
 
 .jumbotron {
 	height: 100vh;
-	background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("./images/clothing-store-background.jpg");
+	background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("images/clothing-store-background.jpg");
 	background-position: center;
 	background-size: cover;
 	color: $honey-dew;

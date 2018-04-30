@@ -1,79 +1,91 @@
+import greyhoodie from "../images//greyhoodie.jpg";
+import bluesweater from "../images/bluesweater.jpg";
+import blacktee from "../images/blacktshirt.jpg";
+import blackleathersneakers from "../images/blackleathershoes.jpeg";
+import darkbluejeans from "../images/darkjeans.jpg";
+import blackhoodie from "../images/blackhoodie.jpg";
+import whitetee from "../images/whitetshirt.jpg";
+import acidwashedjeans from "../images/acidwashjeans.jpg";
+import greensneakers from "../images/greensneakers.jpg";
+import classichightops from "../images/classichightops.jpg";
+import greysweater from "../images/greysweater.jpg";
+
 const productsArr = [
 	{
 		id: 0,
 		name: "Grey Hoodie",
 		category: "hoodies",
-		image: require("../images/greyhoodie.jpg"),
+		image: greyhoodie,
 		price: "39.99"
 	},
 	{
 		id: 1,
 		name: "Blue Sweater",
 		category: "sweaters",
-		image: require("../images/bluesweater.jpg"),
+		image: bluesweater,
 		price: "34.99"
 	},
 	{
 		id: 2,
 		name: "Black Tee",
 		category: "tshirts",
-		image: require("../images/blacktshirt.jpg"),
+		image: blacktee,
 		price: "19.99"
 	},
 	{
 		id: 3,
 		name: "Black Leather Sneakers",
 		category: "shoes",
-		image: require("../images/blackleathershoes.jpeg"),
+		image: blackleathersneakers,
 		price: "65.00"
 	},
 	{
 		id: 4,
 		name: "Dark Blue Jeans",
 		category: "jeans",
-		image: require("../images/darkjeans.jpg"),
+		image: darkbluejeans,
 		price: "50.00"
 	},
 	{
 		id: 5,
 		name: "Black Hoodie",
 		category: "hoodies",
-		image: require("../images/blackhoodie.jpg"),
+		image: blackhoodie,
 		price: "35.00"
 	},
 	{
 		id: 6,
 		name: "White Tee",
 		category: "tshirts",
-		image: require("../images/whitetshirt.jpg"),
+		image: whitetee,
 		price: "19.99"
 	},
 	{
 		id: 7,
 		name: "Acid Washed Jeans",
 		category: "jeans",
-		image: require("../images/acidwashjeans.jpg"),
+		image: acidwashedjeans,
 		price: "45.99"
 	},
 	{
 		id: 8,
 		name: "Green Sneakers",
 		category: "shoes",
-		image: require("../images/greensneakers.jpg"),
+		image: greensneakers,
 		price: "60.00"
 	},
 	{
 		id: 9,
 		name: "Classic High Tops",
 		category: "shoes",
-		image: require("../images/classichightops.jpg"),
+		image: classichightops,
 		price: "62.99"
 	},
 	{
 		id: 10,
 		name: "Grey Sweater",
 		category: "sweaters",
-		image: require("../images/greysweater.jpg"),
+		image: greysweater,
 		price: "32.50"
 	}
 ];
