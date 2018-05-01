@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A clothing e-commerce site.",
   "main": "index.js",
+  "homepage": "https://www.davefarrer.com/Online-Outfitters",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
